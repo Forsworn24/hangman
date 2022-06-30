@@ -6,12 +6,12 @@ class ConsoleInterface
   end
 
   def print_out
-    puts <<~HEREDOC
+    puts <<~HANGMAN
       Слово: #{word_to_show}
       #{figure}
       Ошибки (#{@game.errors_made}): #{errors_to_show}
       У вас осталось ошибок: #{@game.errors_allowed}
-    HEREDOC
+    HANGMAN
 
     if @game.won?
       puts "Поздравляем, вы выиграли!"
@@ -29,7 +29,7 @@ class ConsoleInterface
   end
 
   def errors_to_show
-    @game.errors.join(', ')
+    @game.errors.join(", ")
   end
 
   def get_input
